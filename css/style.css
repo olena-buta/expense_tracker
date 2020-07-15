@@ -1,0 +1,181 @@
+/* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: inherit;
+}
+
+.container {
+  margin: 30px auto;
+  width: 350px;
+}
+
+.balance-title {
+  margin: 0;
+  font-size: 16px;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.balance {
+  margin: 0;
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  margin: 40px 0 10px;
+  padding-bottom: 10px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 19px;
+  border-bottom: 1px solid #bbb;
+}
+
+h4 {
+  margin: 0;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.income-expense-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.income-expense-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.income-expense-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  margin: 5px 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+label {
+  margin: 10px 0;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="number"] {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+}
+
+.btn {
+  display: block;
+  margin: 10px 0px 30px;
+  padding: 10px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  background-color: #9c8811;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border: 2px solid transparent;
+  border-radius: 2px;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #9c8811;
+  cursor: pointer;
+  outline: none;
+}
+
+.list {
+  margin-bottom: 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 10px;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.list-item.plus {
+  border-left: 5px solid #2ecc71;
+}
+
+.list-item.minus {
+  border-left: 5px solid #c0392b;
+}
+
+.delete-btn {
+  position: absolute; 
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  font-size: 20px;
+  line-height: 20px;
+  background-color: #e74c3c;
+  border: 0;
+  border-radius: 2px;
+  transition: opacity 0.3s ease-in ;
+  opacity: 0;
+}
+
+.list-item:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+}
+
+.fa-times {
+  color: #fff;
+}
