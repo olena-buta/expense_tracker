@@ -132,7 +132,7 @@ input[type="number"] {
   list-style: none;
 }
 
-.list-item {
+.list li {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -143,11 +143,11 @@ input[type="number"] {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.list-item.plus {
+li.plus {
   border-left: 5px solid #2ecc71;
 }
 
-.list-item.minus {
+li.minus {
   border-left: 5px solid #c0392b;
 }
 
@@ -168,7 +168,7 @@ input[type="number"] {
   opacity: 0;
 }
 
-.list-item:hover .delete-btn {
+li:hover .delete-btn {
   opacity: 1;
 }
 
