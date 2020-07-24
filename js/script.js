@@ -6,7 +6,9 @@ const form = document.getElementById('form');
 const text = document.getElementById('text');
 const amount = document.getElementById('amount');
 
-let transactions = [];
+const localStorageTransactions = JSON.parse(localStorage.getItem('transactions'));
+
+let transactions = localStorage.getItem('transaction') !== null ? localStorageTransactions : [];
 
 function addTransaction(e) {
   e.preventDefault();
@@ -23,6 +25,7 @@ function addTransaction(e) {
     transactions.push(transaction);
     addTransactionDOM(transaction);
     updateValues();
+    updateLocalStorage();
 
     text.value = '';
     amount.value = '';
@@ -69,7 +72,12 @@ function updateValues() {
 function removeTransaction(id) {
   transactions = transactions.filter(transaction => transaction.id !== id);
 
+  updateLocalStorage();
   init();
+}
+
+function updateLocalStorage() {
+  localStorage.setItem('transactions', JSON.stringify(transactions));
 }
 
 function init() {
@@ -82,7 +90,3 @@ function init() {
 init();
 
 form.addEventListener('submit', addTransaction);
-list.addEventListener('click', e => {
-  const elementForDelete = e.target.parentElement.parentElement;
-  elementForDelete.remove();
-});
